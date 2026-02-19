@@ -3,7 +3,7 @@
 ![Design preview for the Password generator app coding challenge](./preview.jpg)
 
 ## Welcome! 👋
-<!--
+
 ========================================
 PASSWORD GENERATOR – HTML STRUCTURE SUMMARY
 ========================================
