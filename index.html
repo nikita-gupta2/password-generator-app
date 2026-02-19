@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./starter-code/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+     <script src="app.js" defer></script>
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main class="container">
+        <h1>Password Generator</h1>
+        <div class="password-display">
+          <input type="text" id="password" placeholder="P4$5W0rD!" readonly>
+          <button id="copy-btn"><img src="./starter-code/assets/images/icon-copy.svg"></button>
+        </div>
+      <div class="Password-analysis">
+        <div class="length-section">
+          <label for="length">
+            Character Length
+            <span id="length-value">10</span>
+          </label>
+          <input type="range" id="length" min="4" max="20" value="10">
+        </div>
+        <div class="options">
+          <label class="checkbox">
+            <input type="checkbox" id="uppercase">
+             <span class="custom-box"></span>
+        Include Uppercase Letters
+      </label>
+
+      <label class="checkbox" >
+        <input type="checkbox" id="lowercase">
+         <span class="custom-box"></span>
+        Include Lowercase Letters
+    </label>
+
+    <label class="checkbox">
+        <input type="checkbox" id="numbers">
+         <span class="custom-box"></span>
+        Include Numbers
+    </label>
+
+    <label class="checkbox">
+        <input type="checkbox" id="symbols">
+         <span class="custom-box"></span>
+        Include Symbols
+    </label>
+</div>
+    <div class="strength">
+  <span class="strength-label">Strength</span>
+
+  <div class="strength-right">
+    <span class="strength-text">MEDIUM</span>
+
+    <div class="strength-bars">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</div>
+  <button id="generate-btn">
+    Generate <span><img src="./starter-code/assets/images/icon-arrow-right.svg"></span>
+  </button>
+</div>
+    </main>
+  <!-- Password Generator
+
+  P4$5W0rD!
+
+  Character Length
+
+  Include Uppercase Letters
+  Include Lowercase Letters
+  Include Numbers
+  Include Symbols
+
+  Strength
+
+  Generate -->
+
+</body>
+</html>
