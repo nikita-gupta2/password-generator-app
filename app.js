@@ -82,40 +82,61 @@ function calculateStrength() {
   }
 }
 
+function getRandomChar(str) {
+  const index = Math.floor(Math.random() * str.length);
+  return str[index];
+}
 
+function shuffleString(str) {
+  return str
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
+}
 function generatePassword() {
   const length = Number(lengthSlider.value);
-  let characters = "";
   let password = "";
+  let characters = [];
 
+  // Step 1: Force at least one from each selected type
   if (uppercaseCheckbox.checked) {
-    characters += UPPERCASE;
+    password += getRandomChar(UPPERCASE);
+    characters.push(UPPERCASE);
   }
 
   if (lowercaseCheckbox.checked) {
-    characters += LOWERCASE;
+    password += getRandomChar(LOWERCASE);
+    characters.push(LOWERCASE);
   }
 
   if (numbersCheckbox.checked) {
-    characters += NUMBERS;
+    password += getRandomChar(NUMBERS);
+    characters.push(NUMBERS);
   }
 
   if (symbolsCheckbox.checked) {
-    characters += SYMBOLS;
+    password += getRandomChar(SYMBOLS);
+    characters.push(SYMBOLS);
   }
 
-  // Validation
-  if (characters === "") {
+  // ❗ Validation
+  if (characters.length === 0) {
     alert("Select at least one option");
     return;
   }
 
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    password += characters[randomIndex];
+  // Step 2: Fill remaining length
+  while (password.length < length) {
+    const randomSet =
+      characters[Math.floor(Math.random() * characters.length)];
+    password += getRandomChar(randomSet);
   }
-  console.log(password);
+
+  // Step 3: Shuffle final password
+  password = shuffleString(password);
+
   passwordInput.value = password;
+
   calculateStrength();
 }
 generateBtn.addEventListener("click", generatePassword);
